@@ -48,39 +48,39 @@ return array(
 
 		'sqlite' => array(
 			'driver'   => 'sqlite',
-			'database' => __DIR__.'/../database/production.sqlite',
-			'prefix'   => '',
+			'database' => __DIR__.'/../database/development.sqlite',
+			'prefix'   => 'spixsocial_',
 		),
 
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'database',
+			'database'  => 'development',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
+			'prefix'    => 'spixsocial_',
 		),
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
-			'database' => 'database',
+			'database' => 'development',
 			'username' => 'root',
 			'password' => '',
 			'charset'  => 'utf8',
-			'prefix'   => '',
+			'prefix'   => 'spixsocial_',
 			'schema'   => 'public',
 		),
 
 		'sqlsrv' => array(
 			'driver'   => 'sqlsrv',
 			'host'     => 'localhost',
-			'database' => 'database',
+			'database' => 'development',
 			'username' => 'root',
 			'password' => '',
-			'prefix'   => '',
+			'prefix'   => 'spixsocial_',
 		),
 
 	),
