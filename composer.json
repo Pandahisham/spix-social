@@ -7,7 +7,9 @@
 		"laravel/framework": "4.1.*"
 	},
 	"require-dev": {
-		"way/generators": "2.*"
+		"way/generators": "2.*",
+		"php-console/php-console": "3.*",
+		"php-console/laravel-service-provider": "1.*"
 	},
 	"autoload": {
 		"classmap": [
