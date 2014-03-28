@@ -3,7 +3,7 @@
 /**
  * Controller responsible for authentication
  */
-class UsersController extends BaseController {
+class UsersController extends \BaseController {
 
 	/**
 	 * Property responsible for define the default layout
@@ -104,7 +104,7 @@ class UsersController extends BaseController {
 						->withInput();
 
 		}
-		
+
 	}
 
 	/**
