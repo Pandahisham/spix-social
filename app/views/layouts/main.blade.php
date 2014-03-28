@@ -16,11 +16,11 @@
 
 	<body>
 
-		<!-- menu -->
+		<!-- top menu -->
 		<nav class="navbar navbar-default" role="banner">
 			<div class="container-fluid">
 
-				<!-- toogle menu -->
+				<!-- toogle -->
 				<div class="navbar-header">
 					<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
 						<span class="sr-only">Toggle Navigation</span>
@@ -31,7 +31,7 @@
 					{{ HTML::link('/', 'Spix Social', array('class'=>'navbar-brand')) }}
 				</div>
 
-				<!-- navbar menu -->
+				<!-- top menu -->
 				<div class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 
 					<!-- left side -->
@@ -70,7 +70,25 @@
 
 		<!-- content -->
 		<div class="container-fluid">
-			{{ $content }}
+			<div class="row">
+
+				<!-- right side -->
+				<div class="col-md-9 col-md-push-3">
+
+					{{-- blade template --}}
+					@yield('content')
+
+				</div>
+
+				<!-- left side -->
+				<div class="col-md-3 col-md-pull-9">
+
+					{{-- blade template --}}
+					@yield('apps')
+
+				</div>
+
+			</div>
 		</div>
 
 		<!-- javascripts -->
