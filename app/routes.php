@@ -12,3 +12,7 @@
 */
 
 Route::get('/', 'HomeController@getHome');
+
+Route::controller('home', 'HomeController');
+
+Route::controller('users', 'UsersController');
