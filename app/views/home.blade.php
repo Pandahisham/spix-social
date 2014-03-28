@@ -39,7 +39,7 @@
 	{{-- for users authenticated render the content --}}
 	@else
 
-		<!-- content -->
+		<!-- box to post a new timeline -->
 		<div class="panel panel-default">
 
 			<!-- header -->
@@ -65,6 +65,25 @@
 			</div>
 
 		</div>
+
+		<!-- list of all timeline -->
+		@foreach ($timelines as $timeline)
+			<div class="panel panel-default">
+
+				<!-- header -->
+				<div class="panel-heading">
+					<h3 class="panel-title">News</h3>
+				</div>
+
+				<!-- body -->
+				<div class="panel-body">
+
+					{{ $timeline->body }}
+
+				</div>
+
+			</div>
+		@endforeach
 
 	@endif
 
