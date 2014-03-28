@@ -40,7 +40,9 @@
 					{{ Form::password('password_confirmation', array('class'=>'form-control', 'placeholder'=>'Password confirmation')) }}
 				</div>
 
-				{{ Form::submit('Sign Up', array('class'=>'btn btn-default')) }}
+				<div class="form-group">
+					{{ Form::submit('Sign Up', array('class'=>'btn btn-default')) }}
+				</div>
 
 			{{ Form::close() }}
 
