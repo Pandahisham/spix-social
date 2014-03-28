@@ -1,23 +1,39 @@
 <?php
 
+/**
+ * Controller responsible for home page
+ */
 class HomeController extends BaseController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
+	/**
+	 * Property responsible for define the default layout
+	 *
+	 * Path: app/views/layouts/main.blade.php
+	 */
+	protected $layout = 'layouts.main';
 
-	public function showWelcome()
+	/**
+	 * Method responsible for bootstrap Controller
+	 */
+	public function __construct()
 	{
-		return View::make('hello');
+
+		// Controller Filter
+		$this->beforeFilter('csrf', array('on'=>'post'));
+
+	}
+
+	/**
+	 * Method responsible for render content page
+	 *
+	 * GET: /
+	 */
+	public function getHome()
+	{
+
+		// Path: app/views/home.blade.php
+		$this->layout->content = View::make('home');
+
 	}
 
 }
