@@ -82,10 +82,31 @@
 
 				<!-- left side -->
 				<div class="col-md-3 col-md-pull-9">
+					@if(Auth::check())
 
-					{{-- blade template --}}
-					@yield('apps')
+						<!-- content -->
+						<div class="panel panel-default">
 
+							<!-- header -->
+							<div class="panel-heading">
+								<h3 class="panel-title">Apps</h3>
+							</div>
+
+							<!-- body -->
+							<div class="panel-body">
+								<div>
+									<span class="glyphicon glyphicon-arrow-right"></span>
+									People
+								</div>
+								<div>
+									<span class="glyphicon glyphicon-arrow-right"></span>
+									Friends
+								</div>
+							</div>
+
+						</div>
+
+					@endif
 				</div>
 
 			</div>
