@@ -77,9 +77,10 @@
 
 				<!-- body -->
 				<div class="panel-body">
-
-					{{ $timeline->body }}
-
+					<blockquote class="blockquote-reverse">
+						<p>{{ $timeline->body }}</p>
+						<footer>{{ $timeline->user->email }}, {{ $timeline->created_at }}</footer>
+					</blockquote>
 				</div>
 
 			</div>

@@ -31,13 +31,28 @@ class HomeController extends BaseController {
 	public function getHome()
 	{
 
-		// Retrieve all the timeline
-		// By default order the result by lastone created first
-		$timelines = Timeline::orderBy('created_at', 'desc')->get();
+		// Check if user is authenticated
+		if (Auth::check())
+		{
 
-		// Path: app/views/home.blade.php
-		$this->layout->content = View::make('home')
-									->with('timelines', $timelines);
+			// Retrieve all the timeline available
+			$timelines = Timeline::where('user_id', '=', Auth::user()->id)
+							->orderBy('created_at', 'desc')
+							->get();
+
+			// Path: app/views/home.blade.php
+			$this->layout->content = View::make('home')
+										->with('timelines', $timelines);
+
+		}
+
+		// Otherwise
+		else {
+
+			// Path: app/views/home.blade.php
+			$this->layout->content = View::make('home');
+
+		}
 
 	}
 

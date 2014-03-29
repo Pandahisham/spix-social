@@ -48,6 +48,7 @@ class TimelinesController extends \BaseController {
 			// Create a new post
 			$timeline = new Timeline;
 			$timeline->body = Input::get('body');
+			$timeline->user_id = Auth::user()->id;
 			$timeline->save();
 
 			// GET: /

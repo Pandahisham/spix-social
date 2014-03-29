@@ -6,15 +6,6 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	/**
-	 * Property responsible for validations
-	 */
-	public static $rules = array(
-		'email'=>'required|email|unique:users',
-		'password'=>'required|alpha_num|between:6,12|confirmed',
-		'password_confirmation'=>'required|alpha_num|between:6,12'
-	);
-
-	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
@@ -27,6 +18,17 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var array
 	 */
 	protected $hidden = array('password');
+
+	/**
+	 * Property responsible for validations
+	 *
+	 * @see http://laravel.com/docs/validation#available-validation-rules
+	 */
+	public static $rules = array(
+		'email'=>'required|email|unique:users',
+		'password'=>'required|alpha_num|between:6,12|confirmed',
+		'password_confirmation'=>'required|alpha_num|between:6,12'
+	);
 
 	/**
 	 * Get the unique identifier for the user.
