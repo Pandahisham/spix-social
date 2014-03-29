@@ -26,7 +26,7 @@ class TimelinesController extends \BaseController {
 	/**
 	 * Method responsible for store the new post on timeline
 	 *
-	 * POST: timeline
+	 * POST: timelines
 	 */
 	public function store()
 	{
