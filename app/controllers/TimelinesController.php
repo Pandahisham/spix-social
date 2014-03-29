@@ -24,13 +24,6 @@ class TimelinesController extends \BaseController {
 	}
 
 	/**
-	 * @todo Task to be started
-	 */
-	public function index()
-	{
-	}
-
-	/**
 	 * Method responsible for store the new post on timeline
 	 *
 	 * POST: timeline
@@ -69,13 +62,6 @@ class TimelinesController extends \BaseController {
 
 		}
 
-	}
-
-	/**
-	 * @todo Task to be started
-	 */
-	public function show($id)
-	{
 	}
 
 	/**
