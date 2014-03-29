@@ -4,7 +4,10 @@
 {{-- section --}}
 @section('content')
 
-	<!-- content -->
+	<!--
+		feature:
+		- form to log in
+	-->
 	<div class="panel panel-default">
 
 		<!-- header -->

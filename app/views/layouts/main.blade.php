@@ -16,7 +16,10 @@
 
 	<body>
 
-		<!-- top menu -->
+		<!--
+			feature:
+			- menu for simple informations
+		-->
 		<nav class="navbar navbar-default" role="banner">
 			<div class="container-fluid">
 
@@ -58,7 +61,10 @@
 			</div>
 		</nav>
 
-		<!-- messages -->
+		<!--
+			feature:
+			- messages triggered by the system
+		-->
 		<div class="container-fluid">
 			@if(Session::has('message'))
 				<div class="alert alert-warning alert-dismissable">
@@ -75,16 +81,23 @@
 				<!-- right side -->
 				<div class="col-md-9 col-md-push-3">
 
+					<!--
+						feature:
+						- main content generated via controller
+					-->
 					{{-- blade template --}}
 					@yield('content')
 
 				</div>
 
-				<!-- left side -->
+				<!-- right side -->
 				<div class="col-md-3 col-md-pull-9">
 					@if(Auth::check())
 
-						<!-- content -->
+						<!--
+							feature:
+							- list of applications available
+						-->
 						<div class="panel panel-default">
 
 							<!-- header -->

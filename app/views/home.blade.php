@@ -8,7 +8,10 @@
 	{{-- for non-users authenticated request the log in --}}
 	@if(!Auth::check())
 
-		<!-- content -->
+		<!--
+			feature:
+			- splash screen
+		-->
 		<div class="panel panel-default">
 
 			<!-- header -->
@@ -39,7 +42,10 @@
 	{{-- for users authenticated render the content --}}
 	@else
 
-		<!-- box to post a new timeline -->
+		<!--
+			feature:
+			- box to post a new timeline
+		-->
 		<div class="panel panel-default">
 
 			<!-- header -->
@@ -66,7 +72,10 @@
 
 		</div>
 
-		<!-- list of all timeline -->
+		<!--
+			feature:
+			- list of all timeline
+		-->
 		@foreach ($timelines as $timeline)
 			<div class="panel panel-default">
 
