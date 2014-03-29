@@ -58,13 +58,33 @@
 
 				{{ Form::open(array('url'=>'timelines')) }}
 
-				<div class="form-group">
-					{{ Form::textarea('body', null, array('class'=>'form-control', 'placeholder'=>'Tell me a news.')) }}
-				</div>
+					<div class="form-group">
+						{{ Form::textarea('body', null, array('class'=>'form-control', 'placeholder'=>'Tell me a news.')) }}
+					</div>
 
-				<div class="form-group">
-					{{ Form::submit('Publish', array('class'=>'btn btn-default')) }}
-				</div>
+					<div class="form-group">
+
+						{{ Form::submit('Publish', array('class'=>'btn btn-default')) }}
+
+						<!--
+							feature:
+							- button to select the order of posts on timeline
+						-->
+						<div class="btn-group">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+								Order by <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									{{ HTML::link('/?order_by=created_at', 'Created at (desc)') }}
+								</li>
+								<li>
+									{{ HTML::link('/?order_by=user', 'User (desc)') }}
+								</li>
+							</ul>
+						</div>
+
+					</div>
 
 				{{ Form::close() }}
 

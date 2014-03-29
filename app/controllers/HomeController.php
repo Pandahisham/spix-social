@@ -35,10 +35,21 @@ class HomeController extends BaseController {
 		if (Auth::check())
 		{
 
-			// Retrieve all the timeline available
-			$timelines = Timeline::where('user_id', '=', Auth::user()->id)
-							->orderBy('created_at', 'desc')
-							->get();
+			// Check if will reorder the timeline
+			// Retrieving all the posts available
+			if(Input::get('order_by') == 'user')
+			{
+				$timelines = Timeline::where('user_id', '=', Auth::user()->id)
+								->orderBy('user_id', 'desc')
+								->get();
+			}
+
+			else
+			{
+				$timelines = Timeline::where('user_id', '=', Auth::user()->id)
+								->orderBy('created_at', 'desc')
+								->get();
+			}
 
 			// Path: app/views/home.blade.php
 			$this->layout->content = View::make('home')
