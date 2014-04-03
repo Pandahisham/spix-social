@@ -109,7 +109,7 @@
 							<div class="panel-body">
 								<div>
 									<span class="glyphicon glyphicon-arrow-right"></span>
-									People
+									{{ HTML::link('/persons', 'Persons') }}
 								</div>
 								<div>
 									<span class="glyphicon glyphicon-arrow-right"></span>

@@ -21,3 +21,4 @@ Route::controller('users', 'UsersController');
 // Resource controllers routes
 Route::resource('timelines', 'TimelinesController');
 Route::resource('comments', 'CommentsController');
+Route::resource('persons', 'PersonsController');
