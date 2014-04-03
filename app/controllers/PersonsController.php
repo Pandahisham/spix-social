@@ -34,7 +34,7 @@ class PersonsController extends \BaseController {
 		// Retrieving all the persons available
 		$persons = User::all();
 
-		// Path: app/views/home.blade.php
+		// Path: app/views/persons/index.blade.php
 		$this->layout->content = View::make('persons.index')
 									->with('persons', $persons);
 
@@ -45,6 +45,14 @@ class PersonsController extends \BaseController {
 	 */
 	public function show($id)
 	{
+
+		// Retrieving the person available
+		$person = User::find($id);
+
+		// Path: app/views/persons/show.blade.php
+		$this->layout->content = View::make('persons.show')
+									->with('person', $person);
+
 	}
 
 }

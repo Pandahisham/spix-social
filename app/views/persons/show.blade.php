@@ -6,7 +6,7 @@
 
 	<!--
 		feature:
-		- list of all persons (users)
+		- show the persons (users)
 	-->
 	<div class="panel panel-default">
 
@@ -17,12 +17,11 @@
 
 		<!-- body -->
 		<div class="panel-body">
-			@foreach ($persons as $person)
-				<p>
-					<span class="glyphicon glyphicon-user btn-lg"></span>
-					{{ HTML::link('/persons/'.$person->id, $person->email) }}
-				</p>
-			@endforeach
+			<p>
+				<span class="glyphicon glyphicon-user btn-lg"></span>
+			</p>
+			<p><strong>Email: </strong>{{ $person->email }}</p>
+			<p><strong>Created at: </strong>{{ $person->created_at }}</p>
 		</div>
 
 	</div>
