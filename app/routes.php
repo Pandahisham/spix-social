@@ -16,8 +16,8 @@ Route::get('/', 'HomeController@getHome');
 
 // Restful controllers routes
 Route::controller('home', 'HomeController');
-
 Route::controller('users', 'UsersController');
 
 // Resource controllers routes
 Route::resource('timelines', 'TimelinesController');
+Route::resource('comments', 'CommentsController');

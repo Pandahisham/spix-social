@@ -129,6 +129,9 @@
 		{{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') }}
 		{{ HTML::script('http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js') }}
 
+		{{-- blade template --}}
+		@yield('javascript')
+
 	</body>
 
 </html>

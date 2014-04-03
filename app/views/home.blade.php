@@ -97,24 +97,77 @@
 			- list of all timeline
 		-->
 		@foreach ($timelines as $timeline)
+
 			<div class="panel panel-default">
 
 				<!-- header -->
 				<div class="panel-heading">
-					<h3 class="panel-title">News</h3>
+					<h3 class="panel-title">
+						<a id="timeline-{{ $timeline->id }}">
+							News
+						</a>
+					</h3>
 				</div>
 
 				<!-- body -->
 				<div class="panel-body">
+
 					<blockquote class="blockquote-reverse">
 						<p>{{ $timeline->body }}</p>
 						<footer>{{ $timeline->user->email }}, {{ $timeline->created_at }}</footer>
 					</blockquote>
+
+					<!--
+						feature:
+						- box to comment on post
+						- list of all comments
+					-->
+					<div>
+
+						{{ HTML::link('#timeline-'.$timeline->id, 'Comment', array('class'=>'btn btn-default createComment','id'=>'')) }}
+
+						<div id="commentForm{{ $timeline->id }}" style="display: none; padding: 15px">
+
+							<hr />
+
+							<div>{{ Helpers::listComments($timeline->id) }}</div>
+
+							<hr />
+
+							{{ Form::open(array('url'=>'comments')) }}
+
+								<div class="form-group">
+									{{ Form::textarea('body', null, array('class'=>'form-control', 'placeholder'=>'Fell free to comment.')) }}
+								</div>
+
+								<div class="form-group">
+									{{ Form::hidden('timeline_id', $timeline->id) }}
+									{{ Form::submit('Publish', array('class'=>'btn btn-default')) }}
+								</div>
+
+							{{ Form::close() }}
+
+						</div>
+
+					</div>
+
 				</div>
 
 			</div>
+
 		@endforeach
 
 	@endif
+
+@stop
+
+{{-- section --}}
+@section('javascript')
+
+	<script type="text/javascript">
+		$('.createComment').click(function() {
+			$(this).next().show();
+		});
+	</script>
 
 @stop
