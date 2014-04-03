@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Controller
+ * Controller responsible for persons on Spix Social
  */
 class PersonsController extends \BaseController {
 
@@ -24,7 +24,9 @@ class PersonsController extends \BaseController {
 	}
 
 	/**
-	 * Method
+	 * Method responsible for list all the persons
+	 *
+	 * GET: /persons
 	 */
 	public function index()
 	{
