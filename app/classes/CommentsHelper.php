@@ -3,7 +3,7 @@
 /**
  * Helper responsible for abstract some elements from View
  */
-class Helpers {
+class CommentsHelper {
 
 	/**
 	 * Method responsible for render a list of comments

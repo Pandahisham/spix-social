@@ -130,7 +130,7 @@
 
 							<hr />
 
-							<div>{{ Helpers::listComments($timeline->id) }}</div>
+							<div>{{ CommentsHelper::listComments($timeline->id) }}</div>
 
 							<hr />
 
