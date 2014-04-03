@@ -75,6 +75,7 @@ class CommentsController extends \BaseController {
 
 		// Retrieving all the comments available
 		$comments = Comment::with('user')
+						->where('timeline_id', '=', $id)
 						->get();
 
 		// JSON \o/

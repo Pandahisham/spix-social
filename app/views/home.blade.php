@@ -103,9 +103,7 @@
 				<!-- header -->
 				<div class="panel-heading">
 					<h3 class="panel-title">
-						<a id="timeline-{{ $timeline->id }}">
-							News
-						</a>
+						<a id="timeline-{{ $timeline->id }}">News</a>
 					</h3>
 				</div>
 
@@ -127,8 +125,6 @@
 						{{ HTML::link('#timeline-'.$timeline->id, 'Comment', array('class'=>'btn btn-default createComment','id'=>'')) }}
 
 						<div id="commentForm{{ $timeline->id }}" style="display: none; padding: 15px">
-
-							<hr />
 
 							<div>{{ CommentsHelper::listComments($timeline->id) }}</div>
 

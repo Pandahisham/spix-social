@@ -18,6 +18,7 @@ class CommentsHelper {
 
 		// Dump!
 		foreach ($comments as $comment) {
+			echo '<hr />';
 			echo '<blockquote>';
 			echo '<p>'.$comment->body.'</p>';
 			echo '<footer>'.$comment->user->email.', '.$comment->created_at.'</footer>';
