@@ -22,3 +22,4 @@ Route::controller('users', 'UsersController');
 Route::resource('timelines', 'TimelinesController');
 Route::resource('comments', 'CommentsController');
 Route::resource('persons', 'PersonsController');
+Route::resource('friends', 'FriendsController');

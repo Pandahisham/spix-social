@@ -113,7 +113,7 @@
 								</div>
 								<div>
 									<span class="glyphicon glyphicon-arrow-right"></span>
-									Friends
+									{{ HTML::link('/friends', 'Friends') }}
 								</div>
 							</div>
 
