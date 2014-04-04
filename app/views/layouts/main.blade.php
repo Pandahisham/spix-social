@@ -109,6 +109,10 @@
 							<div class="panel-body">
 								<div>
 									<span class="glyphicon glyphicon-arrow-right"></span>
+									{{ HTML::link('/', 'Timeline') }}
+								</div>
+								<div>
+									<span class="glyphicon glyphicon-arrow-right"></span>
 									{{ HTML::link('/persons', 'Persons') }}
 								</div>
 								<div>
