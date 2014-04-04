@@ -24,7 +24,7 @@ class Friend extends \Eloquent {
 	 */
 	public static $rules = array(
 		'user_id'=>'required',
-		'has_friendship'=>'required'
+		'has_friendship'=>'required',
 	);
 
 	/**

@@ -103,7 +103,7 @@ class UsersController extends \BaseController {
 				// Getting the inputs on HTML form
 				array(
 					'email'=>Input::get('email'),
-					'password'=>Input::get('password')
+					'password'=>Input::get('password'),
 				)
 
 			)

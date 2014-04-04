@@ -27,7 +27,7 @@ class BaseController extends Controller {
 	{
 
 		// Controller Filter
-		$this->beforeFilter('csrf', array('on'=>'post'));
+		$this->beforeFilter('csrf', array('on'=>'post',));
 
 	}
 

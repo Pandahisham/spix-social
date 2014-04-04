@@ -23,7 +23,7 @@ class Timeline extends \Eloquent {
 	 * @see http://laravel.com/docs/validation#available-validation-rules
 	 */
 	public static $rules = array(
-		'body'=>'required'
+		'body'=>'required',
 	);
 
 	/**

@@ -24,7 +24,7 @@ class Comment extends \Eloquent {
 	 */
 	public static $rules = array(
 		'body'=>'required',
-		'timeline_id'=>'required'
+		'timeline_id'=>'required',
 	);
 
 	/**

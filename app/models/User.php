@@ -17,7 +17,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var array
 	 */
-	protected $hidden = array('password');
+	protected $hidden = array('password',);
 
 	/**
 	 * Property responsible for validations
@@ -27,7 +27,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public static $rules = array(
 		'email'=>'required|email|unique:users',
 		'password'=>'required|alpha_num|between:6,12|confirmed',
-		'password_confirmation'=>'required|alpha_num|between:6,12'
+		'password_confirmation'=>'required|alpha_num|between:6,12',
 	);
 
 	/**
