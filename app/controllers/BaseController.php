@@ -3,9 +3,14 @@
 class BaseController extends Controller {
 
 	/**
-	 * Setup the layout used by the controller.
+	 * Property responsible for define the default layout
 	 *
-	 * @return void
+	 * Path: app/views/layouts/main.blade.php
+	 */
+	protected $layout = 'layouts.main';
+
+	/**
+	 * Method responsible for setup the layout used by the controller.
 	 */
 	protected function setupLayout()
 	{
@@ -13,6 +18,17 @@ class BaseController extends Controller {
 		{
 			$this->layout = View::make($this->layout);
 		}
+	}
+
+	/**
+	 * Method responsible for bootstrap Controller
+	 */
+	public function __construct()
+	{
+
+		// Controller Filter
+		$this->beforeFilter('csrf', array('on'=>'post'));
+
 	}
 
 }

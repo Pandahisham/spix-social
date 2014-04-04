@@ -6,24 +6,6 @@
 class UsersController extends \BaseController {
 
 	/**
-	 * Property responsible for define the default layout
-	 *
-	 * Path: app/views/layouts/main.blade.php
-	 */
-	protected $layout = 'layouts.main';
-
-	/**
-	 * Method responsible for bootstrap Controller
-	 */
-	public function __construct()
-	{
-
-		// Controller Filter
-		$this->beforeFilter('csrf', array('on'=>'post'));
-
-	}
-
-	/**
 	 * Method responsible for render sign up page
 	 *
 	 * GET: users/signup
