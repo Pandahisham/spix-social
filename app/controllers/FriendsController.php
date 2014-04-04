@@ -8,7 +8,7 @@ class FriendsController extends \BaseController {
 	/**
 	 * Method responsible for list all the friends
 	 *
-	 * GET: /friends
+	 * GET: friends
 	 */
 	public function index()
 	{
@@ -40,14 +40,14 @@ class FriendsController extends \BaseController {
 		if ($validator->passes())
 		{
 
-			// Create a new post
+			// Create a new friend
 			$friend = new Friend;
 			$friend->user_id = Input::get('user_id');
 			$friend->has_friendship = Input::get('has_friendship');
 			$friend->save();
 
-			// GET: /
-			return Redirect::to('/')
+			// GET: persons
+			return Redirect::to('persons/'.$friend->has_friendship)
 					->with('message', 'Nice to meet you!');
 
 		}
@@ -56,8 +56,8 @@ class FriendsController extends \BaseController {
 		else
 		{
 
-			// GET: /
-			return Redirect::to('/persons')
+			// GET: persons
+			return Redirect::to('persons')
 						->with('message', 'Ops, you tried to be my friend?')
 						->withErrors($validator)
 						->withInput();

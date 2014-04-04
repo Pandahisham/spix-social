@@ -18,6 +18,7 @@
 		<!-- body -->
 		<div class="panel-body">
 
+			<!-- block for display a person -->
 			<p>
 				<span class="glyphicon glyphicon-user btn-lg"></span>
 			</p>
@@ -26,7 +27,7 @@
 
 			<!--
 				feature:
-				- add the persons as friend
+				- add the person as friend
 			-->
 			@if ($person->id != Auth::user()->id && count($friendship) == 0)
 				{{ Form::open(array('url'=>'friends')) }}

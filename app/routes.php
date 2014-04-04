@@ -12,13 +12,13 @@
 */
 
 // Basic controllers routes
-Route::get('/', 'HomeController@getHome');
+Route::get('/', 'HomeController@index');
 
 // Restful controllers routes
-Route::controller('home', 'HomeController');
 Route::controller('users', 'UsersController');
 
 // Resource controllers routes
+Route::resource('home', 'HomeController');
 Route::resource('timelines', 'TimelinesController');
 Route::resource('comments', 'CommentsController');
 Route::resource('persons', 'PersonsController');

@@ -28,7 +28,7 @@
 				</div>
 			@endif
 
-			<!-- form user sign up -->
+			<!-- form for user sign up -->
 			{{ Form::open(array('url'=>'users/signup')) }}
 
 				<div class="form-group">

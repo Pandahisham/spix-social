@@ -18,7 +18,7 @@
 		<!-- body -->
 		<div class="panel-body">
 
-			<!-- form user log in -->
+			<!-- form for user log in -->
 			{{ Form::open(array('url'=>'users/login')) }}
 
 				<div class="form-group">

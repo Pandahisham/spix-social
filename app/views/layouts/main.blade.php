@@ -109,7 +109,7 @@
 							<div class="panel-body">
 								<div>
 									<span class="glyphicon glyphicon-arrow-right"></span>
-									{{ HTML::link('/', 'Timeline') }}
+									{{ HTML::link('/timelines', 'Timeline') }}
 								</div>
 								<div>
 									<span class="glyphicon glyphicon-arrow-right"></span>

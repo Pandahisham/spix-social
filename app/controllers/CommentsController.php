@@ -27,8 +27,8 @@ class CommentsController extends \BaseController {
 			$comment->user_id = Auth::user()->id;
 			$comment->save();
 
-			// GET: /
-			return Redirect::to('/')
+			// GET: timelines
+			return Redirect::to('timelines')
 					->with('message', 'Thanks for the feedback.');
 
 		}
@@ -37,8 +37,8 @@ class CommentsController extends \BaseController {
 		else
 		{
 
-			// GET: /
-			return Redirect::to('/')
+			// GET: timelines
+			return Redirect::to('timelines')
 						->with('message', 'Ops, you tried to tell me something?')
 						->withErrors($validator)
 						->withInput();
@@ -50,7 +50,7 @@ class CommentsController extends \BaseController {
 	/**
 	 * Method responsible for show the comments on post from timeline
 	 *
-	 * GET: /comments/{id}
+	 * GET: comments/{id}
 	 */
 	public function show($id)
 	{
@@ -63,13 +63,6 @@ class CommentsController extends \BaseController {
 		// JSON \o/
 		return Response::json($comments);
 
-	}
-
-	/**
-	 * @todo Task to be started
-	 */
-	public function destroy($id)
-	{
 	}
 
 }
