@@ -32,7 +32,7 @@
 				@foreach ($friends as $friend)
 					<p>
 						<span class="glyphicon glyphicon-user btn-lg"></span>
-						{{ HTML::link('/friends/'.$friend->id, $friend->email) }}
+						{{ HTML::link('/persons/'.$friend->friend->id, $friend->friend->email) }}
 					</p>
 				@endforeach
 

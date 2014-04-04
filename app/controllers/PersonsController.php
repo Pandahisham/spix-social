@@ -49,9 +49,15 @@ class PersonsController extends \BaseController {
 		// Retrieving the person available
 		$person = User::find($id);
 
+		// Retrieving the friendship
+		$friendship = Friend::where('user_id', '=', Auth::user()->id)
+						->where('has_friendship', '=', $person->id)
+						->get();
+
 		// Path: app/views/persons/show.blade.php
 		$this->layout->content = View::make('persons.show')
-									->with('person', $person);
+									->with('person', $person)
+									->with('friendship', $friendship);
 
 	}
 
