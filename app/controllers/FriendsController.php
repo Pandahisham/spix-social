@@ -66,4 +66,23 @@ class FriendsController extends \BaseController {
 
 	}
 
+	/**
+	 * Method responsible for destroy the friendship
+	 *
+	 * DELETE: friends
+	 */
+	public function destroy($id)
+	{
+
+		// Retrieving the friendship
+		Friend::where('user_id', '=', Auth::user()->id)
+			->where('has_friendship', '=', $id)
+			->delete();
+
+		// GET: friends
+		return Redirect::to('friends')
+				->with('message_info', 'Goodbye');
+
+	}
+
 }
