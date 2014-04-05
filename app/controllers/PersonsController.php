@@ -8,7 +8,7 @@ class PersonsController extends \BaseController {
 	/**
 	 * Method responsible for list all the persons
 	 *
-	 * GET: /persons
+	 * GET: persons
 	 */
 	public function index()
 	{
@@ -23,7 +23,9 @@ class PersonsController extends \BaseController {
 	}
 
 	/**
-	 * Method
+	 * Method responsible for show the person
+	 *
+	 * GET: persons/{id}
 	 */
 	public function show($id)
 	{
