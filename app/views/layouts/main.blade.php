@@ -66,10 +66,16 @@
 			- messages triggered by the system
 		-->
 		<div class="container-fluid">
-			@if(Session::has('message'))
-				<div class="alert alert-warning alert-dismissable">
+			@if(Session::has('message_info'))
+				<div class="alert alert-info">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-					<strong>Message!</strong> {{ Session::get('message') }}
+					<strong>Message!</strong> {{ Session::get('message_info') }}
+				</div>
+			@endif
+			@if(Session::has('message_warning'))
+				<div class="alert alert-warning">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<strong>Message!</strong> {{ Session::get('message_warning') }}
 				</div>
 			@endif
 		</div>

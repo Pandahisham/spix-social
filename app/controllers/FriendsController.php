@@ -48,7 +48,7 @@ class FriendsController extends \BaseController {
 
 			// GET: persons
 			return Redirect::to('persons/'.$friend->has_friendship)
-					->with('message', 'Nice to meet you!');
+					->with('message_info', 'Nice to meet you');
 
 		}
 
@@ -58,7 +58,7 @@ class FriendsController extends \BaseController {
 
 			// GET: persons
 			return Redirect::to('persons')
-						->with('message', 'Ops, you tried to be my friend?')
+						->with('message_warning', 'Ops, you tried to be my friend?')
 						->withErrors($validator)
 						->withInput();
 

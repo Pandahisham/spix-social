@@ -59,7 +59,7 @@ class TimelinesController extends \BaseController {
 
 			// GET: timelines
 			return Redirect::to('timelines')
-					->with('message', 'You make me feel so up to date.');
+					->with('message_info', 'You make me feel so up to date');
 
 		}
 
@@ -69,7 +69,7 @@ class TimelinesController extends \BaseController {
 
 			// GET: timelines
 			return Redirect::to('timelines')
-						->with('message', 'Ops, you tried to tell me something?')
+						->with('message_warning', 'Ops, you tried to tell me something?')
 						->withErrors($validator)
 						->withInput();
 

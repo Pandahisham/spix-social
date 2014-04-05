@@ -29,7 +29,7 @@ class CommentsController extends \BaseController {
 
 			// GET: timelines
 			return Redirect::to('timelines')
-					->with('message', 'Thanks for the feedback.');
+					->with('message_info', 'Thanks for the feedback');
 
 		}
 
@@ -39,7 +39,7 @@ class CommentsController extends \BaseController {
 
 			// GET: timelines
 			return Redirect::to('timelines')
-						->with('message', 'Ops, you tried to tell me something?')
+						->with('message_warning', 'Ops, you tried to tell me something?')
 						->withErrors($validator)
 						->withInput();
 

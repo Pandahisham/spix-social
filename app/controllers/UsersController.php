@@ -44,7 +44,7 @@ class UsersController extends \BaseController {
 
 		// GET: /
 		return Redirect::to('/')
-					->with('message', 'See you dude.');
+					->with('message_info', 'See you dude');
 
 	}
 
@@ -71,7 +71,7 @@ class UsersController extends \BaseController {
 
 			// GET: users/login
 			return Redirect::to('users/login')
-						->with('message', 'At last, type your new account.');
+						->with('message_info', 'At last, type your new account');
 
 		}
 
@@ -81,7 +81,7 @@ class UsersController extends \BaseController {
 
 			// GET: users/signup
 			return Redirect::to('users/signup')
-						->with('message', 'Ops, the following erros ocurred.')
+						->with('message_warning', 'Ops, the following erros ocurred')
 						->withErrors($validator)
 						->withInput();
 
@@ -112,7 +112,7 @@ class UsersController extends \BaseController {
 
 			// GET: /
 			return Redirect::to('/')
-						->with('message', 'What is up dude.');
+						->with('message_info', 'What is up dude');
 
 		}
 
@@ -121,7 +121,7 @@ class UsersController extends \BaseController {
 
 			// GET: users/login
 			return Redirect::to('users/login')
-						->with('message', 'Ops, your credential is incorrect.');
+						->with('message_warning', 'Ops, your credential is incorrect');
 
 		}
 

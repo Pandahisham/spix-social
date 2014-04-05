@@ -20,7 +20,7 @@
 
 			<!-- error messages -->
 			@if($errors->count() > 0)
-				<div class="alert alert-danger alert-dismissable">
+				<div class="alert alert-warning">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					<ul>
 						{{ HTML::ul($errors->all()) }}
