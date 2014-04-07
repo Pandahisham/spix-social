@@ -13,28 +13,17 @@ class TimelinesController extends \BaseController {
 	public function index()
 	{
 
-		// Retrieving all the friends available
-		$friends = Friend::where('user_id', '=', Auth::user()->id)
-						->lists('has_friendship');
-		$friends = (count($friends) > 0) ? $friends : [0];
-
 		// Check if will reorder the timeline
 		// Retrieving all the posts available
 		if(Input::get('order_by') == 'user')
 		{
-			$timelines = Timeline::orderBy('user_id', 'desc')
-							->where('user_id', '=', Auth::user()->id)
-							->orWhereIn('user_id', $friends)
-							->get();
+			$timelines = Timeline::orderByUser(Auth::user()->id);
 		}
 
 		// Otherwise
 		else
 		{
-			$timelines = Timeline::orderBy('created_at', 'desc')
-							->where('user_id', '=', Auth::user()->id)
-							->orWhereIn('user_id', $friends)
-							->get();
+			$timelines = Timeline::orderByCreatedAt(Auth::user()->id);
 		}
 
 		// Path: app/views/timelines/index.blade.php
