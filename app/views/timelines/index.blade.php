@@ -6,7 +6,7 @@
 
 	<!--
 		feature:
-		- box to post new timelines
+		- box for new timelines
 	-->
 	<div class="panel panel-default">
 
@@ -31,7 +31,7 @@
 
 					<!--
 						feature:
-						- button to select the order of posts on timeline
+						- button to select the order of timeline
 					-->
 					<div class="btn-group">
 						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -81,9 +81,9 @@
 
 				<!--
 					feature:
-					- box to comment on post
+					- box for comment on timeline
 					- button for like timeline
-					- list of all comments
+					- list of all comments (with like support)
 				-->
 				<div>
 
@@ -138,7 +138,7 @@
 
 	<script type="text/javascript">
 		/**
-		 * Snipet responsible for display the box to comment on post
+		 * Snipet responsible for display the box to comment on timeline
 		 */
 		$('.createComment').click(function() {
 			$(this).next().show();

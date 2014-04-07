@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Model responsible for comments on timeline
+ * Model responsible for comment on timeline
  */
 class Comment extends \Eloquent {
 

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Model responsible for friends
+ * Model responsible for like
  */
 class Like extends \Eloquent {
 

@@ -14,7 +14,7 @@ class TimelinesController extends \BaseController {
 	{
 
 		// Check if will reorder the timeline
-		// Retrieving all the posts available
+		// Retrieving all the timeline available
 		if(Input::get('order_by') == 'user')
 		{
 			$timelines = Timeline::orderByUser(Auth::user()->id);
@@ -33,7 +33,7 @@ class TimelinesController extends \BaseController {
 	}
 
 	/**
-	 * Method responsible for store the new post on timeline
+	 * Method responsible for store the new timeline
 	 *
 	 * POST: timelines
 	 */

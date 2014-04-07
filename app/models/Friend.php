@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Model responsible for friends
+ * Model responsible for friend
  */
 class Friend extends \Eloquent {
 

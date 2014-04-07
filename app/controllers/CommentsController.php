@@ -6,7 +6,7 @@
 class CommentsController extends \BaseController {
 
 	/**
-	 * Method responsible for store the new comment on post from timeline
+	 * Method responsible for store the new comment on timeline
 	 *
 	 * POST: comments
 	 */
@@ -48,7 +48,7 @@ class CommentsController extends \BaseController {
 	}
 
 	/**
-	 * Method responsible for show the comments on post from timeline
+	 * Method responsible for show the comments on timeline
 	 *
 	 * GET: comments/{id}
 	 */
