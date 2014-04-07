@@ -16,6 +16,7 @@ class TimelinesController extends \BaseController {
 		// Retrieving all the friends available
 		$friends = Friend::where('user_id', '=', Auth::user()->id)
 						->lists('has_friendship');
+		$friends = (count($friends) > 0) ? $friends : [0];
 
 		// Check if will reorder the timeline
 		// Retrieving all the posts available
