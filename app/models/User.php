@@ -1,8 +1,14 @@
 <?php
 
+/**
+ * Namespaces
+ */
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
+/**
+ * Model responsible for user
+ */
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	/**

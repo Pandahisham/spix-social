@@ -82,9 +82,20 @@
 				<!--
 					feature:
 					- box to comment on post
+					- button for like timeline
 					- list of all comments
 				-->
 				<div>
+
+					<!-- form for store likes -->
+					{{ Form::open(array('url'=>'likes')) }}
+
+						<div class="form-group">
+							{{ Form::hidden('timeline_id', $timeline->id) }}
+							{{ Form::submit('Like', array('class'=>'btn btn-default')) }}
+						</div>
+
+					{{ Form::close() }}
 
 					<!-- button for create comments -->
 					{{ HTML::link('#timeline-'.$timeline->id, 'Comment', array('class'=>'btn btn-default createComment','id'=>'')) }}
