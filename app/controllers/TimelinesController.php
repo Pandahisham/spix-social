@@ -51,6 +51,7 @@ class TimelinesController extends \BaseController {
 			$timeline = new Timeline;
 			$timeline->body = Input::get('body');
 			$timeline->user_id = Auth::user()->id;
+			$timeline->privacy = Input::get('privacy');
 			$timeline->save();
 
 			// GET: timelines

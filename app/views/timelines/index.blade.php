@@ -22,7 +22,17 @@
 			{{ Form::open(array('url'=>'timelines')) }}
 
 				<div class="form-group">
-					{{ Form::textarea('body', null, array('class'=>'form-control', 'placeholder'=>'Tell me a news.')) }}
+					{{ Form::label('body', 'Do you have any news?') }}
+					{{ Form::textarea('body', null, array('class'=>'form-control', 'placeholder'=>'So, tell me')) }}
+				</div>
+
+				<!--
+					feature:
+					- button to select the order of timeline
+				-->
+				<div class="form-group">
+					{{ Form::label('privacy', 'Who can see?') }}
+					{{ Form::select('privacy', array('ME'=>'Only me','ME_FRIENDS'=>'Me & My friends','ANYONE'=>'Anyone',), 'ANYONE', array('class'=>'form-control',)) }}
 				</div>
 
 				<div class="form-group">

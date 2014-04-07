@@ -54,7 +54,17 @@ class Timeline extends \Eloquent {
 		// Retrieving all the timeline available
 		$timelines = Timeline::orderBy('user_id', 'desc')
 						->where('user_id', '=', $id)
-						->orWhereIn('user_id', $friends)
+						->orWhere(function($query)
+						{
+							$query->where('privacy', '=', 'ANYONE');
+						})
+						->orWhere(function($query)
+						{
+							$friends = Friend::where('user_id', '=', Auth::user()->id)->lists('has_friendship');
+							$friends = (count($friends) > 0) ? $friends : [0];
+							$query->where('privacy', '=', 'ME_FRIENDS');
+							$query->whereIn('user_id', $friends);
+						})
 						->get();
 
 		// Dispatch it!
@@ -70,17 +80,20 @@ class Timeline extends \Eloquent {
 	public static function orderByCreatedAt($id)
 	{
 
-		// Retrieving all the friends available
-		$friends = Friend::where('user_id', '=', $id)
-						->lists('has_friendship');
-
-		// Fix SQL WHERE condition
-		$friends = (count($friends) > 0) ? $friends : [0];
-
 		// Retrieving all the timeline available
 		$timelines = Timeline::orderBy('created_at', 'desc')
 						->where('user_id', '=', $id)
-						->orWhereIn('user_id', $friends)
+						->orWhere(function($query)
+						{
+							$query->where('privacy', '=', 'ANYONE');
+						})
+						->orWhere(function($query)
+						{
+							$friends = Friend::where('user_id', '=', Auth::user()->id)->lists('has_friendship');
+							$friends = (count($friends) > 0) ? $friends : [0];
+							$query->where('privacy', '=', 'ME_FRIENDS');
+							$query->whereIn('user_id', $friends);
+						})
 						->get();
 
 		// Dispatch it!
